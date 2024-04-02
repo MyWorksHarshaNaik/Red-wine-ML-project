@@ -8,3 +8,7 @@ conda create -n mlproj python=3.12 -y
 conda activate mlproj
 ```
 
+```bash
+pip install -r requirements.txt 
+```
+
