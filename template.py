@@ -6,7 +6,7 @@ logging.basicConfig(level=logging.INFO, format='[%(asctime)s]:%(message)s:')
 
 project_name = "wineQuality"
 
-# Creating folders and files 
+# Creating folders and files
 list_of_files = [
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
@@ -34,20 +34,19 @@ list_of_files = [
 
 for filepath in list_of_files:
     filepath = Path(filepath)
-    
+
     filedir, filename = os.path.split(filepath)
-    
-    #Creating  directories if not exist
+
+    # Creating  directories if not exist
     if filedir != "":
-        os.makedirs(filedir,exist_ok=True)
+        os.makedirs(filedir, exist_ok=True)
         logging.info(f"Creating directiory; {filedir} for the file {filename}")
-    
-    #creating  empty file if it doesn't exist
-    if (not os.path.exists(filepath)) or (os.path.getsize(filepath)== 0):
+
+    # creating  empty file if it doesn't exist
+    if (not os.path.exists(filepath)) or (os.path.getsize(filepath) == 0):
         with open(filepath, "w") as f:
             pass
-            logging.info(f"Creating empty file : {filepath}")  
-            
+            logging.info(f"Creating empty file : {filepath}")
+
     else:
-        logging.info(f"{filename} is already exists")  
-                  
+        logging.info(f"{filename} is already exists")
